@@ -7,6 +7,9 @@ import { CardHijoComponent } from './card-hijo/card-hijo.component';
 import { AtributoPapaComponent } from './atributo-papa/atributo-papa.component';
 import { ModeloPapaComponent } from './modelo-papa/modelo-papa.component';
 import { DatosCarritoComponent } from './datos-carrito/datos-carrito.component';
+import { HomeComponent } from './home/home.component';
+import {RUTAS_APP} from "./app.rutas";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -15,10 +18,16 @@ import { DatosCarritoComponent } from './datos-carrito/datos-carrito.component';
     CardHijoComponent,
     AtributoPapaComponent,
     ModeloPapaComponent,
-    DatosCarritoComponent
+    DatosCarritoComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, RouterModule.forRoot(
+      RUTAS_APP,
+      {
+        useHash: true
+      }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
