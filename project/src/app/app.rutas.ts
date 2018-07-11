@@ -1,5 +1,8 @@
 import {Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
+import {AtributoPapaComponent} from "./atributo-papa/atributo-papa.component";
+import {ModeloPapaComponent} from "./modelo-papa/modelo-papa.component";
+import {CardPapaComponent} from "./card-papa/card-papa.component";
 
 export const RUTAS_APP: Routes = [
   {
@@ -7,7 +10,15 @@ export const RUTAS_APP: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'modeloAuto',
+    component: AtributoPapaComponent,
+  },
+  {
+    path: 'modeloConductor',
+    component: ModeloPapaComponent,
+  },
+  {
     path: '**',
-    component: HomeComponent
+    component: CardPapaComponent
   }
 ];

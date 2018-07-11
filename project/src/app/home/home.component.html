@@ -4,7 +4,7 @@
   <div class="col-sm-4">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Carrito</a>
+        <a class="nav-link active" href="#">Carrito {{contador}}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Imagen</a>
@@ -16,18 +16,4 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="buscar"
-             name="marca" [(ngModel)]="marca" #nombreMarcaFormulario="ngModel">
-      <div class="input-group-append">
-        <button type="button" (click)="mostrarBusqueda()" id="buscar">Buscar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div >
-  <app-card-papa></app-card-papa>
-</div>
+<router-outlet></router-outlet>

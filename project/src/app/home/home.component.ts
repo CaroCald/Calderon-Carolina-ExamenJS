@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {UsuarioService} from "../Servicios/usuario.service";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,12 +9,16 @@ import {HttpClient} from "@angular/common/http";
 export class HomeComponent implements OnInit {
   config: Autos;
   marca;
+  contador=this._usuarioService.contador;
+
   arregloAutos:Autos;
   ngOnInit(){
+    this.escucharCambiosAuto();
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private _usuarioService:UsuarioService) {
   }
+
 
   configUrl = 'http://localhost:1337/Conductor?nombreMarca=Ford';
   urlAutos= 'http://localhost:1337/Conductor?nombreMarca=Ford';
@@ -30,6 +35,13 @@ export class HomeComponent implements OnInit {
   }
   llenarArreglos(){
     this.buscar().subscribe((data: Autos) => this.arregloAutos= data);
+
+  }
+
+  escucharCambiosAuto() {
+    this._usuarioService.emitircambioAuto.subscribe((autos) => {this.contador= autos;
+      console.log(this.contador)
+    });
 
   }
 }

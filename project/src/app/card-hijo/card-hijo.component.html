@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row" style="margin-left: 15px">
-    <div class="col-sm-4" *ngFor="let info of autos" style="margin-right: 15px; margin-top: 15px">
+    <div class="col-sm-3" *ngFor="let info of autos" style="margin-right: 15px; margin-top: 15px">
       <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/07/08/18/gettyimages-993851436.jpg?w968h681" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Auto 1</h5>
+          <h5 class="card-title">Conductores</h5>
+          <p class="card-text">Modelo {{info.nombres}}</p>
+          <p class="card-text">Modelo {{info.apellidos}}</p>
+
+          <a href="#" class="btn btn-primary" >Seleccionar</a>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Modelo</li>
-          <li class="list-group-item">Marca</li>
-        </ul>
-        <img class="card-img-top" src="https://eldiariony.files.wordpress.com/2017/12/screen-shot-2017-12-22-at-6-08-24-pm.png?w=859" alt="Card image cap">
       </div>
     </div>
   </div>

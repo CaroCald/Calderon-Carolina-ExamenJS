@@ -12,6 +12,7 @@ import {RUTAS_APP} from "./app.rutas";
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import {UsuarioService} from "./Servicios/usuario.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {FormsModule} from "@angular/forms";
       }
     )
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
