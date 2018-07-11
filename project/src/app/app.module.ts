@@ -10,6 +10,8 @@ import { DatosCarritoComponent } from './datos-carrito/datos-carrito.component';
 import { HomeComponent } from './home/home.component';
 import {RUTAS_APP} from "./app.rutas";
 import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {RouterModule} from "@angular/router";
     HomeComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(
+    BrowserModule, FormsModule,
+    HttpClientModule,RouterModule.forRoot(
       RUTAS_APP,
       {
         useHash: true
