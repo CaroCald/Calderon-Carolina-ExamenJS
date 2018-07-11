@@ -13,6 +13,8 @@ import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {UsuarioService} from "./Servicios/usuario.service";
+import { InfoHijosComponent } from './info-hijos/info-hijos.component';
+import {CookieService} from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {UsuarioService} from "./Servicios/usuario.service";
     AtributoPapaComponent,
     ModeloPapaComponent,
     DatosCarritoComponent,
-    HomeComponent
+    HomeComponent,
+    InfoHijosComponent
   ],
   imports: [
     BrowserModule, FormsModule,
@@ -33,7 +36,7 @@ import {UsuarioService} from "./Servicios/usuario.service";
       }
     )
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

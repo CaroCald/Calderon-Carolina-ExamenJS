@@ -38,9 +38,6 @@ export class CardPapaComponent implements OnInit {
     return this.http.get<Conductor[]>(this.urlAutos);
   }
   seleccionar(){
-
-    this.contador++;
-    this._usuarioService.emitirCambio(this.contador);
     const url = ['/modeloAuto'];
     this._router.navigate(url);
 

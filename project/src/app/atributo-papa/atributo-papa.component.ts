@@ -11,8 +11,7 @@ import {Observable} from "rxjs/index";
   styleUrls: ['./atributo-papa.component.css']
 })
 export class AtributoPapaComponent implements OnInit {
-
-  autos:Autos[];
+ autos:Autos[];
   hijos;
   urlAutos= 'http://localhost:1337/Conductor?nombreMarca=Mercedes%20Benz';
   urlHijos='http://localhost:1337/Auto?nombres=Sebastian';
@@ -40,8 +39,5 @@ export class AtributoPapaComponent implements OnInit {
     return this.http.get<Conductor>(this.urlHijos);
   }
 
-  seleccionarHijo(){
-    const url = ['/modeloConductor'];
-    this._router.navigate(url);
-  }
+
 }

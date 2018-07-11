@@ -1,3 +1,98 @@
-<p>
-  datos-carrito works!
-</p>
+<div class="container">
+  <h3>Datos de la cuenta</h3>
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="nombre">-</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="nombre"
+                   name="nombre" [(ngModel)]="nombre" #nombreFormulario="ngModel" >
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="apellido">-</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" aria-describedby="apellido">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="correo">-</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="correo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <button type="button" class="btn btn-secondary">Completar la orden</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <h3>Datos de la facturacion</h3>
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-4">
+          Nombre:
+        </div>
+        <div class="col-sm-4">
+        Apellido
+        </div>
+        <div class="col-sm-4">
+         Correo
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Editar Datos Facturacion</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="nombreEditar" class="col-form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreEditar">
+          </div>
+          <div class="form-group">
+            <label for="apellidoEditar" class="col-form-label">Apellido</label>
+            <input class="form-control" id="apellidoEditar">
+          </div>
+          <div class="form-group">
+            <label for="correoEditar" class="col-form-label">Correo</label>
+            <input class="form-control" id="correoEditar">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Finalizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-info-hijos></app-info-hijos>
+<button type="button" (click)="eliminar()"> Eliminar</button>
