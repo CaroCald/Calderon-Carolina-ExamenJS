@@ -12,7 +12,11 @@ export class AppComponent implements OnInit {
   constructor( private cookieService: CookieService ) { }
 
   ngOnInit(): void {
-    this.cookieService.set( 'Test', 'Hello World' );
-    this.cookieValue = this.cookieService.get('Test');
+    this.cookieService.set( 'user', 'Carolina' );
+    this.cookieService.set( 'correo', 'carolina@epn.edu.ec' );
+    this.cookieService.set( 'apellido', 'Calderon' );
+
+    this.cookieValue = this.cookieService.get('user');
+    console.log('valor cookie '+this.cookieValue);
   }
 }

@@ -7,7 +7,11 @@
       <div class="input-group-append">
         <button type="button" (click)="mostrarBusqueda()" id="buscar">Buscar</button>
       </div>
+
     </div>
+    <ul>
+      <li *ngFor="let c of detallesAutos">{{c.nombreMarca}}</li>
+    </ul>
   </div>
 </div>
 
@@ -31,7 +35,7 @@
 
 
 <div >
-  <app-card-hijo></app-card-hijo>
+  <app-card-hijo *ngIf="mostrar"></app-card-hijo>
 </div>
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {UsuarioService} from "../Servicios/usuario.service";
+import {CookieService} from "ngx-cookie-service";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,34 +9,14 @@ import {UsuarioService} from "../Servicios/usuario.service";
 })
 export class HomeComponent implements OnInit {
   config: Autos;
-  marca;
   contador=this._usuarioService.contador;
-
-  arregloAutos:Autos;
+  user;
   ngOnInit(){
     this.escucharCambiosAuto();
+    this.user=this.cookieService.get('user');
   }
 
-  constructor(private http: HttpClient, private _usuarioService:UsuarioService) {
-  }
-
-
-  configUrl = 'http://localhost:1337/Conductor?nombreMarca=Ford';
-  urlAutos= 'http://localhost:1337/Conductor?nombreMarca=Ford';
-
-  buscar() {
-    console.log(this.configUrl+''+this.marca);
-    console.log(this.http.get<Autos>(this.configUrl));
-    return this.http.get<Autos>(this.configUrl);
-
-  }
-   mostrarBusqueda()
-   {
-     this.buscar().subscribe((data: Autos) => console.log({data}));
-  }
-  llenarArreglos(){
-    this.buscar().subscribe((data: Autos) => this.arregloAutos= data);
-
+  constructor(private http: HttpClient, private _usuarioService:UsuarioService, private cookieService: CookieService) {
   }
 
   escucharCambiosAuto() {
@@ -53,6 +34,7 @@ export interface Autos{
   colorDos: string,
   anio: number,
   conductorIdFK:number
+  id:number
   conductor: Conductor[];
 }
 export interface Conductor {
@@ -60,5 +42,6 @@ export interface Conductor {
   apellidos: string,
   fechaNacimiento: string,
   numeroAutos: number,
+  id:number
   licenciaValida:boolean
 }

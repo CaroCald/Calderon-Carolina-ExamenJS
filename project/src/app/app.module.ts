@@ -15,7 +15,8 @@ import {FormsModule} from "@angular/forms";
 import {UsuarioService} from "./Servicios/usuario.service";
 import { InfoHijosComponent } from './info-hijos/info-hijos.component';
 import {CookieService} from "ngx-cookie-service";
-
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,7 @@ import {CookieService} from "ngx-cookie-service";
     InfoHijosComponent
   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule, AutoCompleteModule, BrowserAnimationsModule,
     HttpClientModule,RouterModule.forRoot(
       RUTAS_APP,
       {

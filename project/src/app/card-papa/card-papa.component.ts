@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Autos, Conductor} from "../home/home.component";
-import {Observable} from "rxjs/index";
 import {UsuarioService} from "../Servicios/usuario.service";
 import {Router} from "@angular/router";
 
@@ -11,48 +10,59 @@ import {Router} from "@angular/router";
   styleUrls: ['./card-papa.component.css']
 })
 export class CardPapaComponent implements OnInit {
-  contador=0;
   selccionaAuto:boolean;
   marca;
+  mostrar=false;
   autos:Autos[];
-  detalles=[];
+  detallesAutos: Autos[];
   urlAutos= 'http://localhost:1337/Conductor';
+  nuevaUrl;
   constructor(private http: HttpClient, private _usuarioService: UsuarioService, private _router:Router) {
   }
 
   ngOnInit() {
-
     this.http.get<Autos[]>(this.urlAutos).subscribe((data: Autos[]) => {
-      this.autos = data;
-      console.log(this.autos.map(datos=>datos.nombreModelo));
-
+      this.detallesAutos = data;
     });
-
     this.escucharCambiosAuto();
+    this.escucharCambioBusqueda();
   }
 
   escucharCambiosAuto() {
     this._usuarioService.emitircambioAuto.subscribe((autos) => {this.selccionaAuto= autos;})
   }
-  getAutos(): Observable<Conductor[]> {
-    return this.http.get<Conductor[]>(this.urlAutos);
+
+  escucharCambioBusqueda() {
+    this._usuarioService.emitircambioBusqueda.subscribe((autos) => {this.nuevaUrl= autos;})
   }
+
   seleccionar(){
     const url = ['/modeloAuto'];
     this._router.navigate(url);
 
   }
-  configUrl = 'http://localhost:1337/Conductor?nombreMarca=Ford';
+  configUrl = 'http://localhost:1337/Conductor?nombreMarca=';
 
   buscar() {
-    console.log(this.configUrl+''+this.marca);
-    console.log(this.http.get<Autos>(this.configUrl));
-    return this.http.get<Autos>(this.configUrl);
+    this.nuevaUrl=this.configUrl+''+this.marca;
+    return this.http.get<Autos>(this.nuevaUrl);
 
   }
+  id;
+
   mostrarBusqueda()
   {
     this.buscar().subscribe((data: Autos) => console.log({data}));
+    this.nuevaUrl=this.configUrl+''+this.marca;
+    this._usuarioService.guardarUrl(this.nuevaUrl);
+    this.mostrar=this._usuarioService.mostrar;
+    this.http.get<Autos[]>(this.nuevaUrl).subscribe((data: Autos[]) => {
+      this.autos = data;
+     this._usuarioService.guardarId(data.map(datos=>datos.id).toString());
+    });
+    console.log('despues de guardar'+this.id);
+    this._usuarioService.guardarUrlHijos('http://localhost:1337/Auto?id=2');
+
   }
 
 }

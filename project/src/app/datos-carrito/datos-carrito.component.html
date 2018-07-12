@@ -17,7 +17,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="apellido">-</span>
             </div>
-            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" aria-describedby="apellido">
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" aria-describedby="apellido" name="apellido" [(ngModel)]="apellido" #apellidoFormulario="ngModel">
           </div>
         </div>
         <div class="col-sm-4">
@@ -25,14 +25,15 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="correo">-</span>
             </div>
-            <input type="text" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="correo">
+            <input type="text" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="correo"
+                   name="correo" [(ngModel)]="correo" #correoFormulario="ngModel">
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-sm-3">
-      <button type="button" class="btn btn-secondary">Completar la orden</button>
+      <button type="button" class="btn btn-secondary" (click)="completarOrden()">Completar la orden</button>
     </div>
   </div>
 </div>
@@ -44,13 +45,13 @@
     <div class="col-sm-9">
       <div class="row">
         <div class="col-sm-4">
-          Nombre:
+          Nombre: {{nombre}}
         </div>
         <div class="col-sm-4">
-        Apellido
+        Apellido: {{apellido}}
         </div>
         <div class="col-sm-4">
-         Correo
+         Correo: {{correo}}
         </div>
       </div>
     </div>
@@ -74,25 +75,29 @@
         <form>
           <div class="form-group">
             <label for="nombreEditar" class="col-form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombreEditar">
+            <input type="text" class="form-control" id="nombreEditar"
+                   name="nombreEditar" [(ngModel)]="nombreEditar" #nombreEditarFormulario="ngModel">
           </div>
           <div class="form-group">
             <label for="apellidoEditar" class="col-form-label">Apellido</label>
-            <input class="form-control" id="apellidoEditar">
+            <input class="form-control" id="apellidoEditar"
+                   name="apellidoEditar" [(ngModel)]="apellidoEditar" #apellidoFormulario="ngModel">
           </div>
           <div class="form-group">
             <label for="correoEditar" class="col-form-label">Correo</label>
-            <input class="form-control" id="correoEditar">
+            <input class="form-control" id="correoEditar"
+                   name="correoEditar" [(ngModel)]="correoEditar" #correoEditarFormulario="ngModel">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Finalizar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="guardar()">Finalizar</button>
       </div>
     </div>
   </div>
 </div>
 
-<app-info-hijos></app-info-hijos>
-<button type="button" (click)="eliminar()"> Eliminar</button>
+<app-info-hijos *ngIf="visible"></app-info-hijos>
+<button type="button" (click)="eliminar()" *ngIf="visible"> Eliminar</button>
+<h3>TOTAL: $ {{total}}</h3>

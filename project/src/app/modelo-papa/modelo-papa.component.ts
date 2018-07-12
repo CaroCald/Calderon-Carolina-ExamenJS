@@ -16,6 +16,7 @@ export class ModeloPapaComponent implements OnInit {
   urlHijos='http://localhost:1337/Auto?nombres=Sebastian';
   urlAutos= 'http://localhost:1337/Conductor?nombreMarca=Mercedes%20Benz';
   contador=this._usuarioService.contador;
+  totalCompra=this._usuarioService.total;
   constructor(private http: HttpClient, private _usuarioService: UsuarioService, private _router:Router) {
   }
 
@@ -39,11 +40,13 @@ export class ModeloPapaComponent implements OnInit {
   escucharCambiosAuto() {
     this._usuarioService.emitircambioAuto.subscribe((autos) => {
       this.contador = autos;
-      console.log(this.contador)
     });
   }
+
     seleccionar(){
       this.contador++;
+      this.totalCompra=this.totalCompra+50;
+      this._usuarioService.colocarTotal(this.totalCompra);
       this._usuarioService.emitirCambio(this.contador);
     }
   }

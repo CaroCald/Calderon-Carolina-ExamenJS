@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Conductor} from "../home/home.component";
+import {Autos, Conductor} from "../home/home.component";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/index";
+import {UsuarioService} from "../Servicios/usuario.service";
 
 @Component({
   selector: 'app-card-hijo',
@@ -9,24 +10,23 @@ import {Observable} from "rxjs/index";
   styleUrls: ['./card-hijo.component.css']
 })
 export class CardHijoComponent implements OnInit {
-  autos: Conductor;
+  autos: Conductor[];
   urlAutos = 'http://localhost:1337/Auto';
-
-  constructor(private http: HttpClient) {
+  urlbusqueda='http://localhost:1337/Auto';
+  constructor(private http: HttpClient, private _usuarioservice:UsuarioService) {
   }
 
   ngOnInit() {
-    this.getAutos().subscribe(data => {
-        this.autos = data;
-        console.log('nombre ' + this.autos.nombres);
-      },
-      err => {
-        console.log(err)
-      }
-    );
+
+    this.mostrar();
   }
 
-  getAutos(): Observable<Conductor> {
-    return this.http.get<Conductor>(this.urlAutos);
+  mostrar(){
+    this.http.get<Conductor[]>(this._usuarioservice.urlnuevaHijos).subscribe((data: Conductor[]) => {
+      this.autos = data;
+      console.log(this.autos.map(data=>data.nombres));
+    });
   }
+
+
 }
