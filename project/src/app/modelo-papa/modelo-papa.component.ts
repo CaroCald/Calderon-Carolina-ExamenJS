@@ -10,38 +10,30 @@ import {Observable} from "rxjs/index";
   templateUrl: './modelo-papa.component.html',
   styleUrls: ['./modelo-papa.component.css']
 })
-export class ModeloPapaComponent implements OnInit {
+export class ModeloPapaComponent implements OnInit{
   hijos: Conductor;
-  autos: Autos;
-  urlHijos='http://localhost:1337/Auto?nombres=Sebastian';
-  urlAutos= 'http://localhost:1337/Conductor?nombreMarca=Mercedes%20Benz';
-  contador=this._usuarioService.contador;
-  totalCompra=this._usuarioService.total;
-  constructor(private http: HttpClient, private _usuarioService: UsuarioService, private _router:Router) {
-  }
+autos: Autos;
+urlHijos='http://localhost:1337/Auto?nombres=Sebastian';
+urlAutos= 'http://localhost:1337/Conductor?nombreMarca=Mercedes%20Benz';
+contador=this._usuarioService.contador;
+totalCompra=this._usuarioService.total;
+constructor(private http: HttpClient, private _usuarioService: UsuarioService, private _router:Router) {
+}
 
-  ngOnInit() {
-    this.http.get<Autos>(this.urlAutos).subscribe((data: Autos) => {
-      this.autos = data;
-    });
-    this.http.get<Conductor>(this.urlHijos).subscribe((data: Conductor) => {
-      this.hijos = data;
-    });
-    this.escucharCambiosAuto();
-  }
+ngOnInit() {
+  this.escucharCambiosAuto();
+}
 
-  escucharCambiosAuto() {
-    this._usuarioService.emitircambioAuto.subscribe((autos) => {
-      this.contador = autos;
-    });
-  }
+escucharCambiosAuto() {
+  this._usuarioService.emitircambioAuto.subscribe((autos) => {
+    this.contador = autos;
+  });
+}
 
-    seleccionar(){
-      this.contador++;
-      this.totalCompra=this.totalCompra+50;
-      this._usuarioService.colocarTotal(this.totalCompra);
-      this._usuarioService.emitirCambio(this.contador);
-    }
-  }
-
-
+seleccionar(){
+  this.contador++;
+  this.totalCompra=this.totalCompra+50;
+  this._usuarioService.colocarTotal(this.totalCompra);
+  this._usuarioService.emitirCambio(this.contador);
+}
+}

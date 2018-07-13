@@ -10,34 +10,25 @@ import {Autos, Conductor} from "../home/home.component";
 })
 export class InfoModeloComponent implements OnInit  {
 
-  hijos;
-autos;
-urlHijos='http://localhost:1337/Condutor?nombres=Lewis';
-urlAutos= 'http://localhost:1337/Auto?nombreMarca=Ferrari';
+  hijos:Conductor;
+autos:Autos;
+urlHijos='http://localhost:1337/Conductor?nombres=Sergio&apellidos=Sainz';
+urlAutos= 'http://localhost:1337/Auto?nombreMarca=Ferrari&id=24';
 contador=this._usuarioService.contador;
-totalCompra=this._usuarioService.total;
-constructor(private http: HttpClient, private _usuarioService: UsuarioService, private _router:Router) {
+constructor(private http: HttpClient, private _usuarioService: UsuarioService) {
 }
 
 ngOnInit() {
   this.http.get<Autos>(this.urlAutos).subscribe((data: Autos) => {
-    this.autos = data;
-    console.log('modeloooo '+data.nombreModelo);
-
+    this.autos = data[0];
+    console.log('************INFO-MODELO-COMPONENT****'+data.nombreMarca);
   });
-  this.http.get<Conductor>(this.urlHijos).subscribe((data: Conductor) => {
-    this.hijos = data;
-    console.log('modeloooo '+data.numeroAutos);
-
+  this.http.get<Conductor[]>(this.urlHijos).subscribe((data:Conductor[]) => {
+    this.hijos = data[0];
   });
-  this.escucharCambiosAuto();
+
 }
 
-escucharCambiosAuto() {
-  this._usuarioService.emitircambioAuto.subscribe((autos) => {
-    this.contador = autos;
-  });
-}
 
 }
 

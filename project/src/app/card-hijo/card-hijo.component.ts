@@ -20,7 +20,6 @@ export class CardHijoComponent implements OnInit {
   mostrar(){
     this.http.get<Autos[]>(this._usuarioservice.urlnuevaHijos).subscribe((data: Autos[]) => {
       this.autos = data;
-      console.log(this.autos.map(data=>data.nombreMarca));
     });
   }
 

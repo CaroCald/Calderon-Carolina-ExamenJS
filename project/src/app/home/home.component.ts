@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   user;
   ngOnInit(){
     this.escucharCambiosAuto();
+    this.contador=this._usuarioService.contador;
     this.user=this.cookieService.get('user');
   }
 
@@ -21,7 +22,6 @@ export class HomeComponent implements OnInit {
 
   escucharCambiosAuto() {
     this._usuarioService.emitircambioAuto.subscribe((autos) => {this.contador= autos;
-      console.log(this.contador)
     });
 
   }

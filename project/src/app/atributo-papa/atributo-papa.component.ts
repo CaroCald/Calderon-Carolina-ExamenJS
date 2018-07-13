@@ -11,7 +11,7 @@ import {Observable} from "rxjs/index";
   styleUrls: ['./atributo-papa.component.css']
 })
 export class AtributoPapaComponent implements OnInit {
- autos:Autos[];
+  autos:Autos[];
   hijos;
   urlAutos= 'http://localhost:1337/Auto?nombreMarca=Ford';
   urlHijos='http://localhost:1337/Conductor?nombres=Sergio&apellidos=Sainz';
@@ -40,7 +40,8 @@ export class AtributoPapaComponent implements OnInit {
   }
 
   seleccionar(index){
-    this._usuarioService.setIndice(index)
+    console.log('Index guardardo'+index);
+    this._usuarioService.setIndiceHijo(index)
   }
 
 
