@@ -14,18 +14,13 @@ export class CardPapaComponent implements OnInit {
   marca;
   mostrar=false;
   autos:Autos[];
-  detallesAutos: Autos[];
-  urlAutos= 'http://localhost:1337/Conductor';
+  conductor:Conductor[];
   nuevaUrl;
-  detalles: Conductor[];
   constructor(private http: HttpClient, private _usuarioService: UsuarioService, private _router:Router) {
   }
 
   ngOnInit() {
-    this.http.get<Autos[]>(this.urlAutos).subscribe((data: Autos[]) => {
-      this.detallesAutos = data;
-    });
-    //this.escucharCambiosAuto();
+    this.escucharCambiosAuto();
     this.escucharCambioBusqueda();
   }
 
@@ -40,30 +35,29 @@ export class CardPapaComponent implements OnInit {
   seleccionar(indice){
     const url = ['/modeloAuto'];
     this._router.navigate(url);
-    console.log('indice'+indice);
+    this._usuarioService.setIndice(indice);
+    return indice;
   }
-  configUrl = 'http://localhost:1337/Conductor?nombreMarca=';
+  configUrl = 'http://localhost:1337/Conductor?nombres=';
 
   buscar() {
     this.nuevaUrl=this.configUrl+''+this.marca;
-    return this.http.get<Autos>(this.nuevaUrl);
+    return this.http.get<Conductor>(this.nuevaUrl);
 
   }
   id;
 
   mostrarBusqueda()
   {
-    this.buscar().subscribe((data: Autos) => console.log({data}));
+    this.buscar().subscribe((data: Conductor) => console.log({data}));
     this.nuevaUrl=this.configUrl+''+this.marca;
     this._usuarioService.guardarUrl(this.nuevaUrl);
     this.mostrar=this._usuarioService.mostrar;
-    this.http.get<Autos[]>(this.nuevaUrl).subscribe((data: Autos[]) => {
-      this.autos = data;
-    });
     this.http.get<Conductor[]>(this.nuevaUrl).subscribe((data: Conductor[]) => {
-      this.detalles = data;
+      this.conductor = data;
     });
-    this._usuarioService.guardarUrlHijos('http://localhost:1337/Auto?id=2');
+
+    this._usuarioService.guardarUrlHijos('http://localhost:1337/Auto?nombreMarca='+this.marca);
 
   }
 

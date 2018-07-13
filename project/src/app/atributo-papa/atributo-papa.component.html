@@ -2,20 +2,20 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-3" *ngFor="let info of hijos" style="margin-right: 15px; margin-top: 15px">
+    <div class="col-sm-3" *ngFor="let info of autos; let indice=index" style="margin-right: 15px; margin-top: 15px">
       <div class="card" style="width: 21rem;">
         <div class="row">
           <div class="col-sm-6">
-            <img class="card-img-top" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/07/08/18/gettyimages-993851436.jpg?w968h681" alt="Card image cap">
+            <img class="card-img-top" src="https://eldiariony.files.wordpress.com/2017/12/screen-shot-2017-12-22-at-6-08-24-pm.png?w=859" alt="Card image cap">
           </div>
           <div class="col-sm-6">
             <div class="col-sm-8 ">
-              {{info.nombres}}
+              {{info.nombreMarca}}
             </div>
             <div class="col-sm-6 ">
-              {{info.apellidos}}
+              {{info.nombreModelo}}
             </div>
-            <a routerLink="/modeloConductor" style="align-content: center">Seleccionar</a>
+            <a routerLink="/modeloConductor" style="align-content: center" (click)="seleccionar(indice)">Seleccionar</a>
           </div>
         </div>
       </div>

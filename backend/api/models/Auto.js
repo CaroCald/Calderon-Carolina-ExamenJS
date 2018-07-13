@@ -8,31 +8,35 @@
 module.exports = {
 
   attributes: {
-    nombres:{
-      type:'string',
-      required: true
-    },
-    apellidos:{
-      type:'string',
-      required: true
-    },
-    fechaNacimiento:{
-      type:'string',
-      required: true
-    },
-    numeroAutos:{
+    chasis:{
       type:'number',
       required: true
     },
-    licenciaValida:{
-      type:'boolean',
+    nombreMarca:{
+      type:'string',
       required: true
     },
-    conductor:{
-      collection: 'Conductor',
-      via:'conductorIdFK'
+    colorUno:{
+      type:'string',
+      required: true
+    },
+    colorDos:{
+      type:'string',
+      required: true
+    },
+    nombreModelo:{
+      type:'string',
+      required: true
+    },
+    anio:{
+      type:'number',
+      required: true
+    },
+    autoIdFK:{
+      model: 'Conductor'
     }
-  },
+
+  }
 
 };
 

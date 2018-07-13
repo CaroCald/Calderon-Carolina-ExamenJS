@@ -13,8 +13,8 @@ import {Observable} from "rxjs/index";
 export class AtributoPapaComponent implements OnInit {
  autos:Autos[];
   hijos;
-  urlAutos= 'http://localhost:1337/Conductor?nombreMarca=Mercedes%20Benz';
-  urlHijos='http://localhost:1337/Auto?nombres=Sebastian';
+  urlAutos= 'http://localhost:1337/Auto?nombreMarca=Ford';
+  urlHijos='http://localhost:1337/Conductor?nombres=Sergio&apellidos=Sainz';
   constructor(private http: HttpClient, private _usuarioService: UsuarioService, private _router:Router) {
   }
 
@@ -37,6 +37,10 @@ export class AtributoPapaComponent implements OnInit {
 
   getAutos(): Observable<Conductor> {
     return this.http.get<Conductor>(this.urlHijos);
+  }
+
+  seleccionar(index){
+    this._usuarioService.setIndice(index)
   }
 
 

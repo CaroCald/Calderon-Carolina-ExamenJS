@@ -9,21 +9,18 @@ import {UsuarioService} from "../Servicios/usuario.service";
   styleUrls: ['./card-hijo.component.css']
 })
 export class CardHijoComponent implements OnInit {
-  autos: Conductor[];
-  urlAutos = 'http://localhost:1337/Auto';
-  urlbusqueda='http://localhost:1337/Auto';
+  autos: Autos[];
   constructor(private http: HttpClient, private _usuarioservice:UsuarioService) {
   }
 
   ngOnInit() {
-
     this.mostrar();
   }
 
   mostrar(){
-    this.http.get<Conductor[]>(this._usuarioservice.urlnuevaHijos).subscribe((data: Conductor[]) => {
+    this.http.get<Autos[]>(this._usuarioservice.urlnuevaHijos).subscribe((data: Autos[]) => {
       this.autos = data;
-      console.log(this.autos.map(data=>data.nombres));
+      console.log(this.autos.map(data=>data.nombreMarca));
     });
   }
 

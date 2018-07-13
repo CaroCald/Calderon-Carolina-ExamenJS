@@ -1,7 +1,6 @@
 import {EventEmitter, Injectable} from "@angular/core";
 import {Autos, Conductor} from "../home/home.component";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/index";
 
 @Injectable()
 export class UsuarioService {
@@ -13,6 +12,7 @@ export class UsuarioService {
   urlnuevaHijos;
   id; total=0;
   visible=true;
+  indiceSeleccionado;
   elmiminartotal=0;
   emitircambioAuto:EventEmitter<number>=new EventEmitter();
   emitircambioCompra:EventEmitter<number>=new EventEmitter();
@@ -33,11 +33,9 @@ export class UsuarioService {
     this.total=totalCompra;
     this.emitircambioCompra.emit(totalCompra);
   }
-  getAutos(){
-    return this.http.get<Autos[]>(this.urlAutos).subscribe((data: Autos[]) => {
-      this.autos = data;
-    });
-  }
+ setIndice(indice){
+    this.indiceSeleccionado=indice;
+ }
   emitirQuitarTotal(cambioAuto:number){
     this. elmiminartotal=cambioAuto;
     this.emitirCambioTota.emit(cambioAuto);
@@ -59,13 +57,6 @@ export class UsuarioService {
     return urlnueva;
   }
 
-  guardarId(id){
-    this.id=id;
-  }
-  geId(){
-    console.log('aquiii'+this.id);
-    return this.id;
-  }
   guardarUrlHijos(urlnuevahijos:string){
     this.urlnuevaHijos=urlnuevahijos;
     return urlnuevahijos;

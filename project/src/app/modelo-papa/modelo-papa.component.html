@@ -1,22 +1,2 @@
-<div class="contariner">
-  <h3>AUTOS</h3>
-  <div class="row" *ngFor="let info of hijos">
-    <div class="col-sm-5">
-      <img src="https://eldiariony.files.wordpress.com/2017/12/screen-shot-2017-12-22-at-6-08-24-pm.png?w=859" alt="" style="height: 200px; width: 360px; margin-left: 10px">
-
-    </div>
-    <div class="col-sm-7">
-      <div class="container">
-      <div class="row" *ngFor="let infoHijos of autos">
-      <div class="col-sm-2">Apellido: {{info.apellidos}}</div>
-      <div class="col-sm-2">Chasis: {{info.nombres}}</div>
-      <div class="col-sm-2">Marca: {{infoHijos.nombreMarca}}</div>
-      <div class="col-sm-2">fecha Nacimiento {{info.fechaNacimiento}}</div>
-      <div class="col-sm-2">licencia valida {{info.licenciaValida}}</div>
-      <div class="col-sm-2">Color auto: {{infoHijos.colorUno}}</div>
-      </div>
-    </div>
-    </div>
-  </div>
-  <a routerLink="/carrito" (click)="seleccionar()">Anadir al carrito </a>
-</div>
+<app-info-modelo></app-info-modelo>
+<a routerLink="/carrito" (click)="seleccionar()">Anadir al carrito </a>

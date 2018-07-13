@@ -11,8 +11,8 @@ import {Observable} from "rxjs/index";
   styleUrls: ['./modelo-papa.component.css']
 })
 export class ModeloPapaComponent implements OnInit {
-  hijos;
-  autos: Autos[];
+  hijos: Conductor;
+  autos: Autos;
   urlHijos='http://localhost:1337/Auto?nombres=Sebastian';
   urlAutos= 'http://localhost:1337/Conductor?nombreMarca=Mercedes%20Benz';
   contador=this._usuarioService.contador;
@@ -21,19 +21,12 @@ export class ModeloPapaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get<Autos[]>(this.urlAutos).subscribe((data: Autos[]) => {
+    this.http.get<Autos>(this.urlAutos).subscribe((data: Autos) => {
       this.autos = data;
-      console.log('modeloooo '+this.autos.map(datos=>datos.nombreMarca));
-
     });
-    this.http.get<Conductor>(this.urlHijos).subscribe(data => {
-        this.hijos = data;
-        console.log('nombre en modelo ' + this.hijos.nombres);
-      },
-      err => {
-        console.log(err)
-      }
-    );
+    this.http.get<Conductor>(this.urlHijos).subscribe((data: Conductor) => {
+      this.hijos = data;
+    });
     this.escucharCambiosAuto();
   }
 
