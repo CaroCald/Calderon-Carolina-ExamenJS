@@ -1,11 +1,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="input-group mb-3">
+    <div class="input-group mb-2">
       <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="buscar"
              name="marca" [(ngModel)]="marca" #nombreMarcaFormulario="ngModel">
       <div class="input-group-append">
-        <button type="button" (click)="mostrarBusqueda()" id="buscar">Buscar</button>
+        <button type="button" (click)="mostrarBusqueda()" id="buscar" class="btn btn-primary">
+          <i class="fas fa-search"> </i>
+          </button>
       </div>
 
     </div>
@@ -18,21 +20,36 @@
 <div >
   <div class="container">
     <div class="row" style="margin-left: 12px">
-      <div class="col-sm-3" *ngFor="let info of autos" style="margin-right: 15px; margin-top: 15px">
-        <div class="card" style="width: 18rem;">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Modelo {{info.nombreModelo}}</li>
-            <li class="list-group-item">Marca {{info.nombreMarca}}</li>
-          </ul>
-          <img class="card-img-top" src="https://eldiariony.files.wordpress.com/2017/12/screen-shot-2017-12-22-at-6-08-24-pm.png?w=859" alt="Card image cap">
-          <button type="button" class="btn btn-secondary" (click)="seleccionar()">Seleccionar</button>
+      <div class="col-sm-3" *ngFor="let info of autos; let indice=index" style="margin-right: 25px; margin-top: 25px">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+          <h4 style="text-align: center">Marca: {{info.nombreMarca}}</h4>
+          <div class="row">
+            <div class="col-sm-6">
+              <p style="text-align: center">  Modelo: {{info.nombreModelo}}</p>
+            </div>
+            <div class="col-sm-6" >
+              <img class="card-img-top" src="https://eldiariony.files.wordpress.com/2017/12/screen-shot-2017-12-22-at-6-08-24-pm.png?w=859" alt="Card image cap">
+            </div>
+          </div>
+          </div>
+          <button type="button" class="btn btn-secondary" (click)="seleccionar(indice)">Seleccionar</button>
+
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-secondary">Cargar mas</button>
   </div>
 </div>
 
+<div class="container">
+<div class="row">
+  <div class="col-sm-4"> </div>
+  <div class="col-sm-4">
+    <button type="button" class="btn btn-secondary" style="margin-top: 40px">Cargar mas</button>
+  </div>
+  <div class="col-sm-4"> </div>
+</div>
+</div>
 
 <div >
   <app-card-hijo *ngIf="mostrar"></app-card-hijo>

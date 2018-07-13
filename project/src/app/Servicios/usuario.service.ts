@@ -59,13 +59,12 @@ export class UsuarioService {
     return urlnueva;
   }
 
-  guardarId(id):string{
+  guardarId(id){
     this.id=id;
-    console.log('aquiii'+this.id);
-    return id;
   }
   geId(){
-
+    console.log('aquiii'+this.id);
+    return this.id;
   }
   guardarUrlHijos(urlnuevahijos:string){
     this.urlnuevaHijos=urlnuevahijos;

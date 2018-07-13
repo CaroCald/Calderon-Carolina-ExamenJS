@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Autos, Conductor} from "../home/home.component";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/index";
 import {UsuarioService} from "../Servicios/usuario.service";
 
 @Component({

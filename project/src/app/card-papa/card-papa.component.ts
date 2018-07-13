@@ -17,6 +17,7 @@ export class CardPapaComponent implements OnInit {
   detallesAutos: Autos[];
   urlAutos= 'http://localhost:1337/Conductor';
   nuevaUrl;
+  detalles: Conductor[];
   constructor(private http: HttpClient, private _usuarioService: UsuarioService, private _router:Router) {
   }
 
@@ -24,7 +25,7 @@ export class CardPapaComponent implements OnInit {
     this.http.get<Autos[]>(this.urlAutos).subscribe((data: Autos[]) => {
       this.detallesAutos = data;
     });
-    this.escucharCambiosAuto();
+    //this.escucharCambiosAuto();
     this.escucharCambioBusqueda();
   }
 
@@ -36,10 +37,10 @@ export class CardPapaComponent implements OnInit {
     this._usuarioService.emitircambioBusqueda.subscribe((autos) => {this.nuevaUrl= autos;})
   }
 
-  seleccionar(){
+  seleccionar(indice){
     const url = ['/modeloAuto'];
     this._router.navigate(url);
-
+    console.log('indice'+indice);
   }
   configUrl = 'http://localhost:1337/Conductor?nombreMarca=';
 
@@ -58,9 +59,10 @@ export class CardPapaComponent implements OnInit {
     this.mostrar=this._usuarioService.mostrar;
     this.http.get<Autos[]>(this.nuevaUrl).subscribe((data: Autos[]) => {
       this.autos = data;
-     this._usuarioService.guardarId(data.map(datos=>datos.id).toString());
     });
-    console.log('despues de guardar'+this.id);
+    this.http.get<Conductor[]>(this.nuevaUrl).subscribe((data: Conductor[]) => {
+      this.detalles = data;
+    });
     this._usuarioService.guardarUrlHijos('http://localhost:1337/Auto?id=2');
 
   }

@@ -1,17 +1,32 @@
 <div class="container">
-  <div class="row" style="margin-left: 15px">
+  <div class="row">
     <div class="col-sm-3" *ngFor="let info of autos" style="margin-right: 15px; margin-top: 15px">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/07/08/18/gettyimages-993851436.jpg?w968h681" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Conductores</h5>
-          <p class="card-text">Modelo {{info.nombres}}</p>
-          <p class="card-text">Modelo {{info.apellidos}}</p>
-
-          <a href="#" class="btn btn-primary" >Seleccionar</a>
+      <div class="card" style="width: 21rem;">
+      <div class="row">
+        <div class="col-sm-6">
+          <img class="card-img-top" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/07/08/18/gettyimages-993851436.jpg?w968h681" alt="Card image cap">
         </div>
+        <div class="col-sm-6">
+          <div class="col-sm-8 ">
+            {{info.nombres}}
+          </div>
+          <div class="col-sm-6 ">
+            {{info.apellidos}}
+          </div>
+        </div>
+
+      </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"> </div>
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-secondary" style="margin-top: 40px">Cargar mas</button>
+    </div>
+    <div class="col-sm-4"> </div>
+  </div>
+</div>

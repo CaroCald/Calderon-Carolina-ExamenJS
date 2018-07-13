@@ -54,8 +54,8 @@ export class DatosCarritoComponent implements OnInit {
     this.contador--;
     this._usuarioService.emitirCambio(this.contador);
     this._usuarioService.emitirEliminar(false);
-    let elim=this._usuarioService.total-50;
-    this._usuarioService.emitirQuitarTotal(elim);
+    this.total=this._usuarioService.total-50;
+    this._usuarioService.emitirQuitarTotal(this.total);
   }
 
 }
