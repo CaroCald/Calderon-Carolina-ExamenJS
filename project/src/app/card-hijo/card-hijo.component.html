@@ -1,21 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-3" *ngFor="let info of autos" style="margin-right: 15px; margin-top: 15px">
-      <div class="card" style="width: 21rem;">
+    <div class="col-sm-3" *ngFor="let info of autos" style=" margin-top:10px">
+      <div class="card" >
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <img class="card-img-top" src="
           https://eldiariony.files.wordpress.com/2017/12/screen-shot-2017-12-22-at-6-08-24-pm.png?w=859" alt="Card image cap">
         </div>
-        <div class="col-sm-6">
-          <div class="col-sm-8 ">
+        <div class="col-sm-7">
+          <div class="col-sm-8">
             {{info.nombreMarca}}
           </div>
           <div class="col-sm-6 ">
             {{info.nombreModelo}}
           </div>
         </div>
-
       </div>
       </div>
     </div>

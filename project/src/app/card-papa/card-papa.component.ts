@@ -57,7 +57,7 @@ export class CardPapaComponent implements OnInit {
       this.conductor = data;
     });
 
-    this._usuarioService.guardarUrlHijos('http://localhost:1337/Auto?nombreMarca=Ferrari');
+    this._usuarioService.guardarUrlHijos('http://localhost:1337/Auto?nombreMarca='+this.marca);
 
   }
 

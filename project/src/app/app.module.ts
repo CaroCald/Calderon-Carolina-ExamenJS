@@ -28,7 +28,7 @@ import { InfoModeloComponent } from './info-modelo/info-modelo.component';
     DatosCarritoComponent,
     HomeComponent,
     InfoHijosComponent,
-    InfoModeloComponent
+    InfoModeloComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AutoCompleteModule, BrowserAnimationsModule,
