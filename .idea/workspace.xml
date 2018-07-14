@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94ef03f6-e36c-4279-bf5b-00d53be6ed6a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/Servicios/usuario.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/Servicios/usuario.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/card-hijo/card-hijo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/card-hijo/card-hijo.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/card-papa/card-papa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/card-papa/card-papa.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/card-papa/card-papa.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/card-papa/card-papa.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app/info-modelo/info-modelo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/info-modelo/info-modelo.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.ts" afterDir="false" />
     </list>
@@ -31,23 +21,19 @@
       <file leaf-file-name="modelo-papa.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="182">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="datos-carrito.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.html">
+      <file leaf-file-name="modelo-papa.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="111" column="23" lean-forward="true" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
+            <state relative-caret-position="191">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="e#0#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,7 +76,6 @@
         <option value="$PROJECT_DIR$/project/src/app/atributo-papa/atributo-papa.component.ts" />
         <option value="$PROJECT_DIR$/project/src/app/info-modelo/info-modelo.component.html" />
         <option value="$PROJECT_DIR$/project/src/app/Servicios/usuario.service.ts" />
-        <option value="$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.ts" />
         <option value="$PROJECT_DIR$/project/src/app/info-modelo/info-modelo.component.ts" />
         <option value="$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.ts" />
         <option value="$PROJECT_DIR$/project/src/app/home/home.component.html" />
@@ -102,8 +87,10 @@
         <option value="$PROJECT_DIR$/project/src/app/card-hijo/card-hijo.component.html" />
         <option value="$PROJECT_DIR$/project/src/app/card-papa/card-papa.component.html" />
         <option value="$PROJECT_DIR$/project/src/app/atributo-papa/atributo-papa.component.html" />
-        <option value="$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.html" />
         <option value="$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.html" />
+        <option value="$PROJECT_DIR$/project/src/app/no-disponible/no-disponible.component.html" />
+        <option value="$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.html" />
+        <option value="$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.ts" />
       </list>
     </option>
   </component>
@@ -123,7 +110,7 @@
       <path value="$PROJECT_DIR$/project/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -158,22 +145,6 @@
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Calderon-Carolina-ExamenJS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calderon-Carolina-ExamenJS" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="card-papa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Calderon-Carolina-ExamenJS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calderon-Carolina-ExamenJS" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="datos-carrito" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -220,25 +191,25 @@
       <workItem from="1531316337108" duration="17569000" />
       <workItem from="1531361411324" duration="39179000" />
       <workItem from="1531484701990" duration="21710000" />
-      <workItem from="1531518787809" duration="8121000" />
+      <workItem from="1531518787809" duration="9507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110739000" />
+    <option name="totallyTimeSpent" value="112125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="5" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29355782" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.29355782" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.26799387" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.26799387" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -257,16 +228,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project/src/app/card-hijo/card-hijo.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -495,13 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/app/info-modelo/info-modelo.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-364">
@@ -683,23 +637,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.html">
+    <entry file="file://$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="224">
+          <caret line="111" column="23" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#4;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/app/datos-carrito/datos-carrito.component.html">
+    <entry file="file://$PROJECT_DIR$/project/src/app/no-disponible/no-disponible.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="111" column="23" lean-forward="true" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
+        <state relative-caret-position="130">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/app/modelo-papa/modelo-papa.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>

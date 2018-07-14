@@ -1,5 +1,8 @@
+<div class="container">
 <app-info-modelo></app-info-modelo>
 <button  routerLink="/carrito" type="button" class="btn btn-secondary" (click)="seleccionar()"
          style="margin-top: 40px; margin-left: 20px">
   <a >Anadir al carrito </a>
 </button>
+</div>
+<app-no-disponible *ngIf="visible"></app-no-disponible>

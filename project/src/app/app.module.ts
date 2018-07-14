@@ -18,6 +18,7 @@ import {CookieService} from "ngx-cookie-service";
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InfoModeloComponent } from './info-modelo/info-modelo.component';
+import { NoDisponibleComponent } from './no-disponible/no-disponible.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { InfoModeloComponent } from './info-modelo/info-modelo.component';
     HomeComponent,
     InfoHijosComponent,
     InfoModeloComponent,
+    NoDisponibleComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AutoCompleteModule, BrowserAnimationsModule,

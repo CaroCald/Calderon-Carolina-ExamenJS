@@ -12,12 +12,17 @@ export class ModeloPapaComponent implements OnInit {
   autos: Autos;
   contador = this._usuarioService.contador;
   totalCompra = this._usuarioService.total;
-
+  visible=false;
   constructor(private http: HttpClient, private _usuarioService: UsuarioService) {
   }
 
   ngOnInit() {
-    this.escucharCambiosAuto();
+    if(this._usuarioService.indiceHijos===2){
+      this.visible=false;
+
+    }else{
+      this.escucharCambiosAuto();
+    }
   }
 
   escucharCambiosAuto() {
